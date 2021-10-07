@@ -1,0 +1,20 @@
+---
+- hosts: raspberrypi
+  become: true
+
+  vars_files:
+    - vars/main.yml
+    - vars/vault.yml
+
+  pre_tasks:
+    - import_tasks: tasks/init.yml
+
+  roles:
+    - role: security
+      tags: ['security']
+    - role: firewall
+      tags: ['security']
+    - role: git
+    - role: pip
+    - role: docker_arm
+    - role: docker_login

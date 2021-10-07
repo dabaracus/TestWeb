@@ -1,0 +1,9 @@
+---
+workspace: /root
+
+# These two variables define whether
+# to use an additional repo for the package installation, and which git packages
+# will be installed.
+git_enablerepo: ""
+git_packages:
+  - git

@@ -1,0 +1,7 @@
+---
+- name: shell | docker login
+  shell: >
+    docker login
+    --username={{ vault_docker_username }}
+    --password={{ vault_docker_password }}
+    {{ docker_registry_url }}
